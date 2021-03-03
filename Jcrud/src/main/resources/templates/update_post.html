@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Update Post</title>
+</head>
+<body>
+<h1>Update Post</h1>
+<form action="#" th:action="@{/}" th:object="${post}" method="POST">
+    <input type="hidden" th:field="*{id}" readonly="readonly" />
+    <input type="text" th:field="*{content}"/>
+    <button type="submit">save</button>
+</form>
+<form action="#" th:action="@{/deletePost/{id}(id=${post.id})}" th:object="${post}" method="POST">
+    <input type="hidden" th:field="${post}"/>
+    <button type="submit">delete</button>
+</form>
+</body>
+</html>

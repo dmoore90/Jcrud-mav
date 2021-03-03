@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+</head>
+<body>
+<h1>Add New List</h1>
+<form action="#" th:action="@{/}" th:object="${post}" method="POST">
+    <input type="text" th:field="*{content}" />
+    <button type="submit">save</button>
+</form>
+<h1>To Do List</h1>
+<tr th:each="post : ${listPosts}">
+    <a th:href="@{'/update_post/' + ${post.id}}"><ul><td th:text="${post.content}">Content</td></ul></a>
+</tr>
+</body>
+</html>
